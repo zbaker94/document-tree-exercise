@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3613625-2adc-413f-9a48-843e96165216" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/component/node-tree/node-tree-component.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/node/node-component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/node/node-component.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/test-data.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/test-data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/node-tree/node-tree.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/node-tree/node-tree-component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/node-tree/node-tree.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/node/node.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/data-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/node/node.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/node-tree/node-tree-component.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/node-tree/node-tree-component.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +83,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576799861543</updated>
-      <workItem from="1576799862760" duration="9039000" />
+      <workItem from="1576799862760" duration="9119000" />
     </task>
     <servers />
   </component>
