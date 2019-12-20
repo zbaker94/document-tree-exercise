@@ -1,15 +1,19 @@
-export interface NodeTree {
-    nodes: Array<Node>
+export class NodeTreeModel{
+    nodes: Array<NodeModel> = [];
+
+    constructor(tree: Array<Object>){
+        tree.map((item) => this.nodes.push(item as NodeModel))
+    }
 }
 
-export interface Node {
-    thumbnail: Thumbnail
-    id: number;
-    parent: number;
-    name: string;
+export class NodeModel {
+    thumbnail!: ThumbnailModel;
+    id!: number;
+    parent!: number;
+    name!: string;
 }
 
-export interface Thumbnail {
-    href: string;
-    description: string;
+export class ThumbnailModel{
+    href!: string;
+    description!: string;
 }
