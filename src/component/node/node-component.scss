@@ -1,14 +1,63 @@
 .card{
   background: whitesmoke;
   border-radius: 10px;
-  width: fit-content;
+  width: 50%;
+  height: 5%;
   padding: 1%;
-  margin: 1%;
+  margin: 2%;
   -webkit-box-shadow: 0 7px 34px -15px rgba(0,0,0,0.75);
   -moz-box-shadow: 0 7px 34px -15px rgba(0,0,0,0.75);
   box-shadow: 0 7px 34px -15px rgba(0,0,0,0.75);
+  transition: 0.2s ease-out;
+}
+
+.card.pointer:hover{
+  -webkit-box-shadow: 0px 10px 30px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 10px 30px -4px rgba(0,0,0,0.75);
+  box-shadow: 0px 10px 30px -4px rgba(0,0,0,0.75);
 }
 
 .title{
-  padding: 3% 0 10% 0;
+  padding: 3% 0 0 0;
 }
+
+.child{
+  margin-left: 5%;
+}
+
+.hidden{
+  display: none;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.child>.slid{
+}
+
+img{
+  max-width: 8%;
+  border-radius: 50px;
+}
+
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+
+

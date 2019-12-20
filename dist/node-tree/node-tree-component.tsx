@@ -23,7 +23,7 @@ class NodeTreeComponent extends React.Component<any,StateTypes>{
 
     render(){
         let nodeList = this.state.data.nodes.map((node: NodeModel) => {
-            return <NodeComponent key={node.id} {...node}  children={node.children}/>
+            return <NodeComponent key={node.id} {...node} />
         });
         return (
             <div className='container'>
