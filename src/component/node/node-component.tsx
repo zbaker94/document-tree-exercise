@@ -30,7 +30,7 @@ class NodeComponent extends React.Component<NodeModel,StateTypes>{
         iconClass += this.state.open ? ' rot-90-cw' : '';
 
         return (
-            <div className={'node ' + additionalNodeClass}>
+            <div className={'node no-select ' + additionalNodeClass}>
                 <div onClick={this.toggleOpen} className={'card ' + additionalCardClass}>
                     <div className='content inline'>
                         <img src={this.props.thumbnail.href} alt={this.props.thumbnail.description} />
