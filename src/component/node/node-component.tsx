@@ -1,7 +1,6 @@
 import React from 'react';
 import {NodeModel} from "../../models";
 import "./node-component.scss"
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 type StateTypes = {
     open: boolean;
@@ -27,27 +26,21 @@ class NodeComponent extends React.Component<NodeModel,StateTypes>{
         }) : '';
         let additionalNodeClass = this.props.parent ? 'child' : '';
         let additionalCardClass = (this.props.children && this.props.children.length >= 0) ? 'pointer' : '';
-        additionalCardClass += ' slid';
-
         let iconClass = (!this.props.children || this.props.children.length === 0) ? 'hidden' : '';
+        iconClass += this.state.open ? ' rot-90-cw' : '';
 
         return (
             <div className={'node ' + additionalNodeClass}>
                 <div onClick={this.toggleOpen} className={'card ' + additionalCardClass}>
-                    <div className='title'>
+                    <div className='content inline'>
+                        <img src={this.props.thumbnail.href} alt={this.props.thumbnail.description} />
+                    </div>
+                    <div className='title inline vertical-center'>
                         {this.props.name}
                     </div>
-                    <div className='content'>
-                        <img src={this.props.thumbnail.href} alt={this.props.thumbnail.description} />
-                        <i className={'expander ' + iconClass}>></i>
-                    </div>
+                    <img className={'expander vertical-center ' + iconClass} src="https://img.icons8.com/windows/32/000000/play.png" alt='arrow icon indicating open or not' />
                 </div>
-                <ReactCSSTransitionGroup
-                    transitionName="fade"
-                    transitionEnterTimeout={500}
-                    transitionLeaveTimeout={300}>
                 {childrenList}
-                </ReactCSSTransitionGroup>
             </div>
         )
     }

@@ -1,4 +1,7 @@
 .card{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+
   background: whitesmoke;
   border-radius: 10px;
   width: 50%;
@@ -8,55 +11,98 @@
   -webkit-box-shadow: 0 7px 34px -15px rgba(0,0,0,0.75);
   -moz-box-shadow: 0 7px 34px -15px rgba(0,0,0,0.75);
   box-shadow: 0 7px 34px -15px rgba(0,0,0,0.75);
+
+  transition-delay: 0.2s;
   transition: 0.2s ease-out;
+
+  animation: fadein 1s;
+  -moz-animation: fadein 1s; /* Firefox */
+  -webkit-animation: fadein 1s; /* Safari and Chrome */
+  -o-animation: fadein 1s; /* Opera */
+
+  .inline{
+    display: inline-block;
+  }
+
+  .vertical-center{
+    transform: translateY(-50%);
+  }
+
+  &.pointer{
+    cursor: pointer;
+
+    &:hover{
+      -webkit-box-shadow: 0px 10px 30px -4px rgba(0,0,0,0.75);
+      -moz-box-shadow: 0px 10px 30px -4px rgba(0,0,0,0.75);
+      box-shadow: 0px 10px 30px -4px rgba(0,0,0,0.75);
+    }
+  }
+
+  .title{
+    padding: 3% 0 0 0;
+  }
+
+  img{
+    max-width: 31%;
+    border-radius: 50px;
+  }
 }
 
-.card.pointer:hover{
-  -webkit-box-shadow: 0px 10px 30px -4px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 10px 30px -4px rgba(0,0,0,0.75);
-  box-shadow: 0px 10px 30px -4px rgba(0,0,0,0.75);
+@keyframes fadein {
+  from {
+    opacity:0;
+    transform: translate(0, -50px);
+  }
+  to {
+    opacity:1;
+    transform: translate(0px, 0px);
+  }
 }
 
-.title{
-  padding: 3% 0 0 0;
+@keyframes fadein-side {
+  from {
+    opacity:0;
+    transform: translate(-20px, -50px);
+  }
+  to {
+    opacity:1;
+    transform: translate(0px, 0px);
+  }
 }
 
 .child{
   margin-left: 5%;
+
+  &.node{
+    .card{
+      animation: fadein-side .5s;
+      -moz-animation: fadein-side .5s; /* Firefox */
+      -webkit-animation: fadein-side .5s; /* Safari and Chrome */
+      -o-animation: fadein-side .5s; /* Opera */
+    }
+  }
 }
 
 .hidden{
   display: none;
 }
 
-.pointer{
-  cursor: pointer;
-}
+.expander{
+  transition: 0.15s ease-out;
+  width: 3%;
 
-.child>.slid{
-}
+  &.vertical-center{
+    transform: translate(0%, -50%);
+  }
 
-img{
-  max-width: 8%;
-  border-radius: 50px;
-}
+  &.rot-90-cw{
+    transform-origin: 50% 50%;
+    transform: rotate(90deg);
 
-.fade-enter {
-  opacity: 0.01;
-}
-
-.fade-enter.fade-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-}
-
-.fade-leave {
-  opacity: 1;
-}
-
-.fade-leave.fade-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
+    &.vertical-center{
+      transform: translate(0%, -50%) rotate(90deg);
+    }
+  }
 }
 
 
