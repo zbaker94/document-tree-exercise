@@ -33,7 +33,9 @@ class NodeComponent extends React.Component<NodeModel,StateTypes>{
             <div className={'node no-select ' + additionalNodeClass}>
                 <div onClick={this.toggleOpen} className={'card ' + additionalCardClass}>
                     <div className='content inline'>
-                        <img src={this.props.thumbnail.href} alt={this.props.thumbnail.description} />
+                        <span data-tooltip={this.props.thumbnail.description} data-tooltip-location="right">
+	                        <img src={this.props.thumbnail.href} alt={this.props.thumbnail.description} />
+                        </span>
                     </div>
                     <div className='title inline vertical-center'>
                         {this.props.name}
