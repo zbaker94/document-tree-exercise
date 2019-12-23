@@ -28,6 +28,11 @@
 
   .inline{
     display: inline-block;
+
+    &.content{
+      max-width: 7vw;
+      min-width: 7vw;
+    }
   }
 
   .vertical-center{

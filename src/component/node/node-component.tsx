@@ -21,9 +21,11 @@ class NodeComponent extends React.Component<NodeModel,StateTypes>{
     }
 
     render(){
+        // create the list of next-level children
         let childrenList = this.props.children && this.state.open ? this.props.children.map((child: NodeModel) => {
             return <NodeComponent key={child.id} {...child}  children={child.children}/>
         }) : '';
+        // add dynamic classes based on parent and child status as well as if the node is open
         let additionalNodeClass = this.props.parent ? 'child' : '';
         let additionalCardClass = (this.props.children && this.props.children.length >= 0) ? 'pointer' : '';
         let iconClass = (!this.props.children || this.props.children.length === 0) ? 'hidden' : '';
@@ -45,10 +47,6 @@ class NodeComponent extends React.Component<NodeModel,StateTypes>{
                 {childrenList}
             </div>
         )
-    }
-
-    get hasChildren(): boolean {
-        return this.props.children.length > 0
     }
 
 }export default NodeComponent

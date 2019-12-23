@@ -1,44 +1,20 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##Exercise to create a tree component with arbitrary depth in React
+To run locally run:
+####npm run-script build
 
-## Available Scripts
+####npm install -g serve
 
-In the project directory, you can run:
+####serve -s build
 
-### `npm start`
+##Justification
+I wanted to abstract the call to retrieve the data so that if this component were to be used in production, we are not limited to reading from a file. I did this by creating a data service that is instantiated in the parent tree component. getData() is called on this class which returns a NodeTreeModel object. The assumption here being that whatever implementation is used, the service will have a getData() function that returns a NodeTreeModel. Using typings from Typescript, as long as all code that cares about the data is working with the NodeTreeModel, NodeModel, etc. the actual implementation of getData() is irrelevant. I believe this provides a level of abstraction that will make the component easier to extend and maintain.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The ux for this component is fairly straightforward and simple. Rounded corners and soft shapes are combined with white, black, gray, and blue to create a minimal, calming effect. Smooth animation attempts to accomplish the same calming simplicity through directional motion and fades. Finally, all nodes react to mouse hover. The nodes with no children have a subtle sinking effect whereas the nodes with children raise up when hovered. 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+###Changes and improvements
+I wanted to roll my own styles for this component to avoid large dependency packages if this component were to be used as a library. All of the pieces are there. However, I neglected to use flexbox or some other responsive paradigm so at smaller screen sizes the look is not ideal.
 
-### `npm test`
+On close, the nodes do not animate. This was a conscious choice to avoid the UI feeling sluggish. Feedback is needed to determine if this is the right choice. If the decision to animate on close was made, child nodes would need some mechanism to know if their parent node was open or not. Additionally instead of removing child nodes from the DOM, they would most likely need to be hidden and have their height animated to zero with no overflow to give the illusion of disappearing.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Finally, I began setting up tests for the component but ran out of time with family obligations and travel. The skeleton is there but with no actual tests.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
